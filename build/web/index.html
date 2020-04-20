@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+    </head>
+    <body>
+        <form action="Login/LogIn.jsp" method="POST">
+            <table border='1' align="center" style="height:200px">     
+                 <!--tr><td>
+                     <select name="user_type" id="user_type">
+                        <option value="buyer">Buyer</option>
+                         <option value="admin">Admin</option>
+                         <option value="supply_staff">Supply staff</option>
+                         <option value="field_staff">Field Staff</option>
+                     </select>
+                    </td>
+                 </tr-->
+              <tr>
+                  <td> User Email: <input type="text" name="user_email"/></td>
+             </tr>
+             <tr>
+                 <td> Password: <input type="password" name="user_passwd"/></td>
+             </tr>
+             <tr>
+                 <td> <input type='submit' name='submit' value='Login'/>
+                 <input type='reset' name='reset' value='Reset'/></td>
+             </tr>
+             <tr>
+                 <td> <a href="/InvManager/Registration/UserRegistration.jsp">New User</a></td>
+             </tr>
+             
+             <tr>
+                 <td>
+                     for Prototype<br>
+                     <a href="buyer_home.html">Buyer Home</a><br>
+                     <a href="storageAdmin_home.html">Admin Home</a><br>
+                     <a href="supplyStaff_home.html">Supply Staff Home</a><br>
+                     <a href="fieldStaff_home.html">Field Staff Home</a> 
+                 </td>
+                </tr>
+                </table> 
+        </form>
+        
+    </body>
+</html>
+
