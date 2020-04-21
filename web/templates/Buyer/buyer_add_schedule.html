@@ -6,17 +6,77 @@ and open the template in the editor.
 -->
 <html>
     <head>
+	<meta charset="utf-8">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
         
-        <meta charset="UTF-8">
+ 
         <title>Home</title>
+	<style>
+	
+
+	body{
+            	min-height: 100vh;
+            	background-color: #FFDAB9;
+		 background-image: url("bg.png");
+        }
+	table {
+ 		border-collapse: collapse;
+  		
+		background-color:#00FA9A;
+		margin:0% 1%;
+	}
+
+	th, td {
+  		padding: 5px;
+  		text-align: left;
+  		border-bottom: 1px solid #008B8B;
+	}
+
+	
+
+	</style>
     </head>
     <body>
-        <table border='1' width="100%">
-             <tr><td><a href="buyer_home.html">Home</a></td>
-             <td colspan="6" rowspan="10">
-             		Add your order details.
+	
+	<hr>
+	<br>
+	<div class="container">
+  
+  		<ul class="list-inline">
+    			<li><a href="buyer_home.html" class="btn btn-primary"><h4>Home</h4></a></li>
+    			<li><a href="buyer_orders.html" class="btn btn-primary"><h4>My Orders</h4></a></li>
+    			<li><a href="buyer_cart.html" class="btn btn-primary"><h4>My Cart</h4></a></li>
+    			<li><a href="buyer_schedule.html" class="btn btn-primary"><h4>Manage Schedule</h4></a></li>
+			<li><a href="buyer_add_schedule.html" class="btn btn-primary"><h4>Add Schedule</h4></a></li>
+    			<li><a href="log_out.php" class="btn btn-primary"><h4>Log out</h4></a></li>
+  		</ul>
+	</div>
+
+<hr style="background-color:black">
+        
+            
+	
+		<!--select class="form-control" id="nav">
+       					 <option><h3>Home</h3></option>
+      					  <option><h3>My Orders</h3></option>
+      					  <option><h3>My Cart</h3></option>
+      					  <option><h3>Manage Schedule</h3></option>
+					  <option><h3>Add Schedule</h3></option>
+					  <option><h3>Log out</h3></option>
+    				  </select>
+    				  <br-->
+
+	
+<table width="100%">
+<tr>
+             <td>
+             		<h2>Add your order details.</h2>
        
-             		<table border="1">
+             		<table width="60%">
              			<tr>
              				<th colspan="2">Delivery day:</th>
              				<td>
@@ -57,26 +117,20 @@ and open the template in the editor.
                         	    </td>
              				</tr>
              				<tr>
-             				<td colspan="3"><input type="submit" value="Add more..."></td>
+             				<td colspan="3"><input type="submit" class="btn btn-info" value="Add more..."></td>
              				</tr>
              				<!--/table>
              			</tr-->
              			<tr>
-             				<td colspan="3"><input type="submit" value="Add order"></td>
+             				<td colspan="3"><input type="submit" class="btn btn-success" value="Add order"></td>
              			</tr>
              		</table>
              	
              	
+        
              		
              		
-             </td>
-             </tr>
-             <tr><td><a href="buyer_orders.html">My Orders</a></td></tr>
-             <tr><td><a href="buyer_cart.html">My Cart</a></td></tr>
-             <tr><td><a href="buyer_schedule.html">Manage Schedule</a></td></tr>
-             <tr><td><a href="buyer_add_schedule.html">Add Schedule</a></td></tr>
-             <tr><td><a href="log_out.php">Log out</a></td></tr>
-
-        </table> 
+             		
+             
     </body>
 </html>

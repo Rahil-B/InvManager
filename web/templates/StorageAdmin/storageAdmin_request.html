@@ -7,15 +7,60 @@ and open the template in the editor.
 <html>
     <head>
         
-        <meta charset="UTF-8">
+       	<meta charset="utf-8">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        
+ 
         <title>Home</title>
-    </head>
+	<style>
+	
+
+	body{
+            	min-height: 100vh;
+            	background-color: #FFDAB9;
+		 background-image: url("bg.png");
+        }
+	table {
+ 		border-collapse: collapse;
+  		width: 100%;
+		background-color:#00FA9A;
+		margin:0% 1%;
+	}
+
+	th, td {
+  		padding: 5px;
+  		text-align: left;
+  		border-bottom: 1px solid #008B8B;
+	}
+
+	
+
+	</style></head>
     <body>
-        <table border='1' width="100%">
-             <tr><td><a href="storageAdmin_home.html">Home</a></td>
+	<hr>
+	<br>
+	<div class="container">
+  
+  		<ul class="list-inline">
+    			<li><a href="storageAdmin_home.html" class="btn btn-primary"><h4>Home</h4></a></li>
+    			<li><a href="storageAdmin_upcomingSupply.html" class="btn btn-primary"><h4>Upcoming Supply</h4></a></li>
+    			<li><a href="storageAdmin_request.html" class="btn btn-primary"><h4>Pending Supply Request</h4></a></li>
+    			<li><a href="storageAdmin_History.html" class="btn btn-primary"><h4>History</h4></a></li>
+    			<li><a href="log_out.php" class="btn btn-primary"><h4>Log out</h4></a></li>
+  		</ul>
+	</div>
+
+	<hr style="background-color:black">
+
+        <table width="100%">
+             <tr><
              <td colspan="4" rowspan="10">
-             		Table of pending supply requests..
-             		<table border="1" width="100%">
+             		<h3>Table of pending supply requests..</h3>
+             		<table width="100%">
              			<tr>
              				<th>Fruit</th>
              				<th>Quantity(Kg)</th>
@@ -40,11 +85,7 @@ and open the template in the editor.
              		
              		
              </td></tr>
-             <tr><td><a href="storageAdmin_upcomingSupply.html">Upcoming Supply</a></td></tr>
-             <tr><td><a href="storageAdmin_request.html">Pending Supply Request</a></td></tr>
-             <tr><td><a href="storageAdmin_History.html">History</a></td></tr>
-             <tr><td><a href="log_out.php">Log out</a></td></tr>
-
+             
         </table> 
     </body>
 </html>

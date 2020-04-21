@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CollectionManagerSupplies
-    Created on : 21 Apr, 2020, 3:28:26 PM
+    Document   : CollectionManagerHistrory
+    Created on : 21 Apr, 2020, 2:44:08 PM
     Author     : Zalak Bhingradiya
 --%>
 
@@ -16,7 +16,7 @@
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-		<title>Supplies</title>
+		<title>History</title>
 		<style>
 	
 
@@ -44,9 +44,11 @@
 		
     </head>
     <body>
-         <hr>
-        <br>
-        <div class="container">
+
+
+		<hr>
+	<br>
+	<div class="container">
   
   		<ul class="list-inline">
     			<li><a href="/InvManager/CollectionManager/CollectionManagerHome" class="btn btn-primary"><h4>Home</h4></a></li>
@@ -57,13 +59,15 @@
     			<li><a href="/InvManager/Login/LogOut.jsp" class="btn btn-primary"><h4>Log out</h4></a></li>
   		</ul>
 	</div>
-        <hr>
-        <br>
-        
-        <table width="100%"  align="center" style="height:200px" >
-            <tr>
+
+<hr style="background-color:black">
+
+
+        <table  width="100%"  align="center" style="height:200px" >
+             
              <td colspan="5" rowspan="10">
-                 <h3>Table for upcoming requests</h3>
+                 <h3> History of supplies</h3><br>
+					 Table for 23/01/2020
              		<table width="100%">
              			<tr>
              				<th>Supply no.</th>
@@ -75,20 +79,58 @@
              				<th>Action</th>
              			</tr>
              			<tr>
-             				<td>S2001230001</td>
+             				<td>S2001230004</td>
              				<td>Pending</td>
-             				<td>Apple</td>
+             				<td>Mango</td>
              				<td>30</td>
-             				<td>F0100100001</td>
+             				<td>F0100100002</td>
              				<td>23/01/2020</td>
-             				<td><input type="button" class="btn btn-success" name="gen_rec" value="Generate receipt"/></td>
+             				<td><input type="button" name="gen_rec" class="btn btn-success" value="Generate receipt"/></td>
+						 </tr>
+						 <tr>
+							<td>S2001230003</td>
+							<td>Pending</td>
+							<td>Apple</td>
+							<td>30</td>
+							<td>F0100100001</td>
+							<td>23/01/2020</td>
+							<td><input type="button" name="gen_rec" class="btn btn-success" value="Generate receipt"/></td>
+						</tr>
+                        </table><br>
+             		Table for 22/01/2020
+             		<table width="100%">
+             			<tr>
+             				<th>Supply no.</th>
+             				<th>Status</th>
+             				<th>Fruit</th>
+             				<th>Quantity(Kg.)</th>
+             				<th>Source</th>
+             				<th>Request Date</th>
+             				<th>Action</th>
              			</tr>
+             			<tr>
+             				<td>S2001220002</td>
+             				<td>Pending</td>
+             				<td>Banana</td>
+             				<td>60</td>
+             				<td>F0100100003</td>
+             				<td>22/01/2020</td>
+             				<td><input type="button" name="gen_rec" class="btn btn-success" value="Generate receipt"/></td>
+						 </tr>
+						 <tr>
+							<td>S2001220001</td>
+							<td>Pending</td>
+							<td>Apple</td>
+							<td>50</td>
+							<td>F0100100001</td>
+							<td>22/01/2020</td>
+							<td><input type="button" name="gen_rec" class="btn btn-success" value="Generate receipt"/></td>
+						</tr>
              		</table>
              		
              		
-             		
              </td></tr>
-             
+            
         </table> 
     </body>
 </html>

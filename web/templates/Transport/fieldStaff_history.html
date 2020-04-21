@@ -7,15 +7,60 @@ and open the template in the editor.
 <html>
     <head>
         
-        <meta charset="UTF-8">
-        <title>History</title>
+       <meta charset="utf-8">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        
+ 
+        <title>Home</title>
+	<style>
+	
+
+	body{
+            	min-height: 100vh;
+            	background-color: #FFDAB9;
+		 background-image: url("bg.png");
+        }
+	table {
+ 		border-collapse: collapse;
+  		width: 100%;
+		background-color:#00FA9A;
+		margin:0% 1%;
+	}
+
+	th, td {
+  		padding: 5px;
+  		text-align: left;
+  		border-bottom: 1px solid #008B8B;
+	}
+
+	
+
+	</style>
+
     </head>
     <body>
-        <table border='1' width="100%"  align="center" style="height:200px" >
-             <tr><td><a href="fieldStaff_home.html">Home</a></td>
+	<hr>
+	<br>
+	<div class="container">
+  
+  		<ul class="list-inline">
+    			<li><a href="fieldStaff_home.html" class="btn btn-primary"><h4>Home</h4></a></li>
+    			<li><a href="fieldStaff_schedule.html" class="btn btn-primary"><h4>Schedule</h4></a></li>
+    			<li><a href="fieldStaff_history.html" class="btn btn-primary"><h4>History</h4></a></li>
+    			<li><a href="log_out.php" class="btn btn-primary"><h4>Log out</h4></a></li>
+  		</ul>
+	</div>
+	<hr>
+
+        <table width="100%"  align="center" style="height:200px" >
+             <tr>
              <td colspan="5" rowspan="10">
 				Supply for 01/01/2020
-				<table border="1" width="100%" >
+				<table width="100%" >
 					<tr>
 						<th>Order no.</th>
 						<th>Fruit</th>
@@ -30,11 +75,11 @@ and open the template in the editor.
 						<td>30</td>
 						<td>F0100100001</td>
 						<td>F0100100002</td>
-						<td><input type="button" name="set_delivery1" value="set Delivered" /></td>
+						<td><input type="button" class="btn btn-success" name="set_delivery1" value="set Delivered" /></td>
 					</tr>
 				</table>
 				Supply for 02/01/2020 
-             		<table border="1" width="100%" >
+             		<table width="100%" >
              			<tr>
              				<th>Order no.</th>
              				<th>Fruit</th>
@@ -49,11 +94,11 @@ and open the template in the editor.
              				<td>20</td>
                              <td>F0100100003</td>
                              <td>F0100100004</td>
-             				<td><input type="button" name="set_delivery2" value="set Delivered" /></td>
+             				<td><input type="button" class="btn btn-success" name="set_delivery2" value="set Delivered" /></td>
              			</tr>
 					 </table>
 					Supply for 03/01/2020 
-						 <table border="1" width="100%" >
+						 <table width="100%" >
 							 <tr>
 								 <th>Order no.</th>
 								 <th>Fruit</th>
@@ -68,7 +113,7 @@ and open the template in the editor.
 								 <td>20</td>
 								 <td>F0100100005</td>
 								 <td>F0100100006</td>
-								 <td><input type="button" name="set_delivery2" value="set Delivered" /></td>
+								 <td><input type="button" class="btn btn-success" name="set_delivery2" value="set Delivered" /></td>
 							 </tr>
 						 <tr>
 									 <th>Order no.</th>
@@ -84,7 +129,7 @@ and open the template in the editor.
 									 <td>20</td>
 									 <td>F0100100007</td>
 									 <td>F0100100008</td>
-									 <td><input type="button" name="set_delivery2" value="set Delivered" /></td>
+									 <td><input type="button" class="btn btn-success" name="set_delivery2" value="set Delivered" /></td>
 								 </tr>
 					
              			<tr>
@@ -93,11 +138,11 @@ and open the template in the editor.
              				<td>20</td>
                              <td>F0100100009</td>
                              <td>F0100100010</td>
-             				<td><input type="button" name="set_delivery2" value="set Delivered" /></td>
+             				<td><input type="button" class="btn btn-success" name="set_delivery2" value="set Delivered" /></td>
              			</tr>
 					 </table>
 					Supply for 04/01/2020 
-						 <table border="1" width="100%" >
+						 <table width="100%" >
 							 <tr>
 								 <th>Order no.</th>
 								 <th>Fruit</th>
@@ -112,14 +157,11 @@ and open the template in the editor.
 								 <td>20</td>
 								 <td>F0100100011</td>
 								 <td>F0100100012</td>
-								 <td><input type="button" name="set_delivery2" value="set Delivered" /></td>
+								 <td><input type="button" class="btn btn-success" name="set_delivery2" value="set Delivered" /></td>
 							 </tr>
 						 </table>
              </td></tr>
-             <tr><td><a href="fieldStaff_schedule.html">Schedule</a></td></tr>             
-             <tr><td><a href="fieldStaff_history.html">History</a></td></tr>
-             <tr><td><a href="log_out.php">Log out</a></td></tr>
-        
+             
         </table> 
     </body>
 </html>

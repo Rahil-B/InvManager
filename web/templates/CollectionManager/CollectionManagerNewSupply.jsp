@@ -1,7 +1,7 @@
 <%-- 
     Document   : CollectionManagerNewSupply
-    Created on : 20 Apr, 2020, 8:11:41 PM
-    Author     : RAHIL
+    Created on : 21 Apr, 2020, 3:18:29 PM
+    Author     : Zalak Bhingradiya
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,17 +9,64 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>New Supply</title>
+		<meta charset="utf-8">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+		<title>New Supply</title>
+		<style>
+	
+
+			body{
+						min-height: 100vh;
+						background-color: #FFDAB9;
+				 background-image: url("bg.png");
+				}
+			table {
+				 border-collapse: collapse;
+				  width: 100%;
+				background-color:#00FA9A;
+				margin:0% 1%;
+			}
+		
+			th, td {
+				  padding: 5px;
+				  text-align: left;
+				  border-bottom: 1px solid #008B8B;
+			}
+		
+			
+		
+			</style>
+		
     </head>
     <body>
-        <table border='1' width="100%"  align="center" style="height:200px" >
+        <hr>
+        <br>
+        <div class="container">
+  
+  		<ul class="list-inline">
+    			<li><a href="/InvManager/CollectionManager/CollectionManagerHome" class="btn btn-primary"><h4>Home</h4></a></li>
+    			<li><a href="/InvManager/CollectionManager/CollectionManagerNewSupply" class="btn btn-primary"><h4>New Supply</h4></a></li>
+    			<li><a href="/InvManager/CollectionManager/CollectionManagerSupplies" class="btn btn-primary"><h4>My Supplies</h4></a></li>
+    			<li><a href="/InvManager/CollectionManager/CollectionManagerHistory" class="btn btn-primary"><h4>View Supply History</h4></a></li>
+			
+    			<li><a href="/InvManager/Login/LogOut.jsp" class="btn btn-primary"><h4>Log out</h4></a></li>
+  		</ul>
+	</div>
+        <hr>
+        <br>
+        <table width="100%"  align="center" style="height:200px" >
              <tr>
-		         <td><a href="/InvManager/CollectionManager/CollectionManagerHome">Home</a></td>
+		         
 		         <td colspan="5" rowspan="10">
 		         
-             		Generate new supply request
+                             <h3>Generate new supply request</h3>
              		<form action = "AddSupply" method="POST">
-                    <table border = "1" width="100%">
+                    <table width="100%">
             			<tr>	
             						<th colspan='3'>New Supply</th>
             			</tr>        
@@ -29,7 +76,7 @@
 		        					<select name="fruit_type">
 		        						<!--value=fruit id-->
 				                        <option value="1" > Apple </option>
-				                        <option value="2" > Mangoe </option>
+				                        <option value="2" > Mango </option>
 				                        <option value="3" > Kiwi </option>
 				                        <option value="4" > Orange </option>
 				                        <option value="5" > Grapes </option>
@@ -67,7 +114,7 @@
             			</tr>
             			<tr>
             				<td>	
-            					<input type='submit' value='Submit'>
+            					<input type='submit' class="btn btn-success" value='Submit'>
             				</td>
             			</tr>
 					</table>
@@ -76,11 +123,7 @@
              		
              		
              </td></tr>
-             <tr><td><a href="/InvManager/CollectionManager/NewSupply">New Supply</a></td></tr>             
-             <tr><td><a href="/InvManager/CollectionManager/Supplies">My Supplies</a></td></tr>
-             <tr><td><a href="/InvManager/CollectionManager/History">View Supply History</a></td></tr>
-             <tr><td><a href="/InvManager/Login/LogOut.jsp">Log out</a></td></tr>
-
+             
         </table> 
     </body>
 </html>

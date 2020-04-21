@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CollectionManagerSupplies
-    Created on : 21 Apr, 2020, 3:28:26 PM
+    Document   : CollectionManangerHome
+    Created on : 21 Apr, 2020, 3:02:50 PM
     Author     : Zalak Bhingradiya
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
  	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-		<title>Supplies</title>
+		<title>Home</title>
 		<style>
 	
 
@@ -44,7 +44,7 @@
 		
     </head>
     <body>
-         <hr>
+        <hr>
         <br>
         <div class="container">
   
@@ -59,15 +59,13 @@
 	</div>
         <hr>
         <br>
-        
-        <table width="100%"  align="center" style="height:200px" >
-            <tr>
+    	<tbl1>
+        <table width="100%"  align="center" style="height:200px">
              <td colspan="5" rowspan="10">
-                 <h3>Table for upcoming requests</h3>
-             		<table width="100%">
+                 <h3>Table for upcoming supplies //which are approved</h3><br>
+             		<table width="100%" >
              			<tr>
              				<th>Supply no.</th>
-             				<th>Status</th>
              				<th>Fruit</th>
              				<th>Quantity(Kg.)</th>
              				<th>Source</th>
@@ -75,20 +73,16 @@
              				<th>Action</th>
              			</tr>
              			<tr>
-             				<td>S2001230001</td>
-             				<td>Pending</td>
-             				<td>Apple</td>
+             				<td>S2001240001</td>
+             				<td>Mango</td>
              				<td>30</td>
              				<td>F0100100001</td>
-             				<td>23/01/2020</td>
-             				<td><input type="button" class="btn btn-success" name="gen_rec" value="Generate receipt"/></td>
+             				<td>24/01/2020</td>
+             				<td><input type="button" name="gen_rec" class="btn btn-success" value="Generate receipt"/></td>
              			</tr>
              		</table>
-             		
-             		
-             		
              </td></tr>
-             
-        </table> 
+             </table>
+        </tbl1> 
     </body>
 </html>

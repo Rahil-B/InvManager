@@ -74,37 +74,63 @@ and open the template in the editor.
 <table width="100%">
 <tr>
              <td>
-             		<h2>Table of orders placed .</h2>
-             		   <table width="100%">
+             		<h2>Table of available fruits.</h2>
+             		<table width="100%">
              			<tr>
-             				<th>Order no.</th>
-             				<th>Date</th>
              				<th>Fruit</th>
-             				<th>quantity(Kg)</th>
-             				<th>Total price</th>
-             				<th>total</th>
-
+             				<th>Quantity available(Kg)</th>
+             				<th>Required quantity(Kg)</th>
+             				<th></th>
              			</tr>
              			<tr>
-             				<td rowspan="2">o0001</td>
-             				<td rowspan="2">01/01/2020</td>
              				<td>Apple</td>
-             				<td>15</td>
-             				<td>450</td>
-             				<td rowspan="2">600</td>
-             				
+             				<td>30</td>
+             				<!--th><select name="o_qty" style="background-color:#3CB371">
+                                <option value="1" > 01 </option>
+                                <option value="2" > 02 </option>
+                                <option value="3" > 03 </option>
+                                <option value="4" > 04 </option>
+                                <option value="5" > 05 </option>
+                            </select></th-->
+				<th><select class="form-control" id="sel1">
+       					 <option>1</option>
+      					  <option>2</option>
+      					  <option>3</option>
+      					  <option>4</option>
+    				  </select></th>
+    				  <br>
+      
+
+                            <!--th><button type="submit" style="background-color:#3CB371; border-color:black; color:black">Add to cart</button></th-->
+				<th><button type="button" class="btn btn-success">Add to cart</button></th>
              			</tr>
              			<tr>
              				<td>Banana</td>
-             				<td>10</td>
-             				<td>150</td>
-             				
-             			</tr>
-             			</table>
+             				<td>50</td>
+             				<!--th><select name="o_qty" style="background-color:#3CB371">
+                                <option value="1" > 01 </option>
+                                <option value="2" > 02 </option>
+                                <option value="3" > 03 </option>
+                                <option value="4" > 04 </option>
+                                <option value="5" > 05 </option>
+                            </select></th-->
+				<th><select class="form-control" id="sel1">
+       					 <option>1</option>
+      					  <option>2</option>
+      					  <option>3</option>
+      					  <option>4</option>
+    				  </select></th>
+    				  <br>
+      
+
+                            <!--th><button type="submit" style="background-color:#3CB371; border-color:black; color:black">Add to cart</button></th-->
+				<th><button type="button" class="btn btn-success">Add to cart</button></th>
+
+				</tr>
+             		</table>
              		
-
-
-
-
+             		
+             		
+             
     </body>
 </html>
