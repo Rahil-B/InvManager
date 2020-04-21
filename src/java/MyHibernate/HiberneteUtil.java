@@ -6,6 +6,10 @@
 package MyHibernate;
 
 import Models.UserData;
+import Models.Supplies;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -20,7 +24,7 @@ public class HiberneteUtil {
     private static final ServiceRegistry serviceReg;
     static {
         try{
-            Configuration config=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(UserData.class);
+            Configuration config=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(UserData.class).addAnnotatedClass(Supplies.class);
             
             serviceReg=new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
             
@@ -40,5 +44,21 @@ public class HiberneteUtil {
         if(serviceReg != null){
             StandardServiceRegistryBuilder.destroy(serviceReg);
         }
+    }
+    
+    public static Date convertDateToSqlDate(String formDate){
+        Date dt=null;
+        try{
+            dt=new Date(
+                    new SimpleDateFormat("yyyy-MM-dd").parse(formDate).getTime()
+            );
+        }
+        catch(ParseException pe){
+            System.out.println("date conversion error");
+        }
+        catch(NullPointerException e){
+            System.out.println("date conversion error: null pointer exception\n");
+        }
+        return dt;
     }
 }

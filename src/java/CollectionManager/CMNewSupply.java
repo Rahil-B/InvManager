@@ -33,9 +33,7 @@ public class CMNewSupply extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerNewSupply.jsp");
         
-        red.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -50,7 +48,10 @@ public class CMNewSupply extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerNewSupply.jsp");
+        
+        red.include(request, response);
+        
     }
 
     /**
@@ -65,6 +66,12 @@ public class CMNewSupply extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        
+        
+        
+        RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerNewSupply.jsp");
+        red.include(request, response);
     }
 
     /**

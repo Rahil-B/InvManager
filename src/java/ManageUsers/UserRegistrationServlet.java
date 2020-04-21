@@ -47,7 +47,9 @@ public class UserRegistrationServlet extends HttpServlet {
         String rePassWd=request.getParameter("repassword");
         String gender=request.getParameter("gender");
         String idNum=request.getParameter("id_num");
-        Date dob=null;
+        Date dob;
+        dob=HiberneteUtil.convertDateToSqlDate(request.getParameter("dob"));
+        /*
         try{
             dob=new Date(
                     new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dob")).getTime()
@@ -59,6 +61,7 @@ public class UserRegistrationServlet extends HttpServlet {
         catch(NullPointerException e){
             
         }
+        */
         String u_type=request.getParameter("u_type");
         
         String address=request.getParameter("address");
@@ -71,7 +74,7 @@ public class UserRegistrationServlet extends HttpServlet {
 //         
 //         Session sess=con.buildSessionFactory(s_reg).openSession();
         
-        Session sess=null;
+        Session sess;
         Transaction tx=null;
         String redirection_string=null;
         try{
