@@ -71,23 +71,7 @@ public class LoginFilter implements Filter {
             log("LoginFilter:DoAfterProcessing");
         }
 
-	// Write code here to process the request and/or response after
-        // the rest of the filter chain is invoked.
-	// For example, a logging filter might log the attributes on the
-        // request object after the request has been processed. 
-	/*
-         for (Enumeration en = request.getAttributeNames(); en.hasMoreElements(); ) {
-         String name = (String)en.nextElement();
-         Object value = request.getAttribute(name);
-         log("attribute: " + name + "=" + value.toString());
-
-         }
-         */
-	// For example, a filter might append something to the response.
-	/*
-         PrintWriter respOut = new PrintWriter(response.getWriter());
-         respOut.println("<P><B>This has been appended by an intrusive filter.</B>");
-         */
+	
     }
 
     /**
@@ -111,7 +95,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse res=(HttpServletResponse) response;
         Throwable problem = null;
             
-        if(req.getRequestURI().endsWith("index.html")|req.getRequestURI().endsWith("InvManager/")|req.getRequestURI().endsWith("LogIn.jsp")|req.getRequestURI().endsWith("UserRegistratinServlet")|req.getRequestURI().endsWith("UserRegistration.jsp")){
+        if(req.getRequestURI().endsWith("index.html")||req.getRequestURI().endsWith("InvManager/")||req.getRequestURI().endsWith("LogIn.jsp")||req.getRequestURI().endsWith("/UserRegistrationServlet")||req.getRequestURI().endsWith("UserRegistration.jsp")){
             try {
                 log("\t\t stage1########");
                 chain.doFilter(request, response);
@@ -127,8 +111,8 @@ public class LoginFilter implements Filter {
             }
 
             //doBeforeProcessing(request, response);
-            HttpSession session=req.getSession();
-            if(session.getAttribute("user_email")!=null){
+            HttpSession session=req.getSession(false);
+            if(session!=null&&session.getAttribute("user_email")!=null){
                 try {
                     chain.doFilter(request, response);
                 } catch (Throwable t) {
@@ -140,7 +124,7 @@ public class LoginFilter implements Filter {
                 }
             }
             else{
-                session.invalidate();
+                //session.invalidate();
                 res.sendRedirect("/InvManager/");
             }
         }
@@ -157,15 +141,7 @@ public class LoginFilter implements Filter {
 
 	// If there was a problem, we want to rethrow it if it is
         // a known type, otherwise log it.
-        if (problem != null) {
-            if (problem instanceof ServletException) {
-                throw (ServletException) problem;
-            }
-            if (problem instanceof IOException) {
-                throw (IOException) problem;
-            }
-            sendProcessingError(problem, response);
-        }
+        
     }
 
     /**

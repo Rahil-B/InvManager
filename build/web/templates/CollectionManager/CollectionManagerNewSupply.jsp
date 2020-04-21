@@ -1,20 +1,20 @@
+<%-- 
+    Document   : CollectionManagerNewSupply
+    Created on : 20 Apr, 2020, 8:11:41 PM
+    Author     : RAHIL
+--%>
 
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Home</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>New Supply</title>
     </head>
     <body>
         <table border='1' width="100%"  align="center" style="height:200px" >
              <tr>
-		         <td><a href="supplyStaff_home.html">Home</a></td>
+		         <td><a href="/InvManager/CollectionManager/CollectionManagerHome">Home</a></td>
 		         <td colspan="5" rowspan="10">
 		         
              		Generate new supply request
@@ -76,10 +76,10 @@ and open the template in the editor.
              		
              		
              </td></tr>
-             <tr><td><a href="supplyStaff_newSupply.html">New Supply</a></td></tr>             
-             <tr><td><a href="supplyStaff_supplies.html">My Supplies</a></td></tr>
-             <tr><td><a href="supplyStaff_history.html">View Supply History</a></td></tr>
-             <tr><td><a href="log_out.php">Log out</a></td></tr>
+             <tr><td><a href="/InvManager/CollectionManager/NewSupply">New Supply</a></td></tr>             
+             <tr><td><a href="/InvManager/CollectionManager/Supplies">My Supplies</a></td></tr>
+             <tr><td><a href="/InvManager/CollectionManager/History">View Supply History</a></td></tr>
+             <tr><td><a href="/InvManager/Login/LogOut.jsp">Log out</a></td></tr>
 
         </table> 
     </body>

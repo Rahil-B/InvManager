@@ -14,7 +14,7 @@
     <body>
     	<tbl1>
         <table border='1'  width="100%"  align="center" style="height:200px">
-             <tr><td><a href="supplyStaff_home.html">Home</a></td>
+             <tr><td><a href="/InvManager/CollectionManager/CollectionManagerHome">Home</a></td>
              <td colspan="5" rowspan="10">
              		Table for upcoming supplies //which are approved
              		<table border="1" width="100%" >
@@ -36,9 +36,9 @@
              			</tr>
              		</table>
              </td></tr>
-             <tr><td><a href="supplyStaff_newSupply.html">New Supply</a></td></tr>             
-             <tr><td><a href="supplyStaff_supplies.html">My Supplies</a></td></tr>
-             <tr><td><a href="supplyStaff_history.html">View Supply History</a></td></tr>
+             <tr><td><a href="/InvManager/CollectionManager/NewSupply">New Supply</a></td></tr>             
+             <tr><td><a href="/InvManager/CollectionManager/Supplies">My Supplies</a></td></tr>
+             <tr><td><a href="/InvManager/CollectionManager/History">View Supply History</a></td></tr>
              <tr><td><a href="/InvManager/Login/LogOut.jsp">Log out</a></td></tr>
         </table>
         </tbl1> 
