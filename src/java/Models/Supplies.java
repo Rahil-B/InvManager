@@ -40,11 +40,11 @@ public class Supplies implements Serializable {
     
     private Date requestDate;
 
-        
+    private String managerEmail;
     public Supplies() {
     }
 
-    public Supplies(int fruitId, int quantity, int sourceId,String sourceType,int desId, Date supplyDate, Date requestDate) {
+    public Supplies(int fruitId, int quantity, int sourceId,String sourceType,int desId, Date supplyDate, Date requestDate,String managerEmail) {
         this.fruitId=fruitId;
         this.quantity = quantity;
         
@@ -53,19 +53,19 @@ public class Supplies implements Serializable {
         this.desId = desId;
         this.supplyDate = supplyDate;
         this.requestDate = requestDate;
+        this.managerEmail=managerEmail;
     }
 
-    public Supplies( int fruitId, int quantity, int sourceId, String sourceType, Date supplyDate, Date requestDate) {
-        
-        this.fruitId = fruitId;
-        this.quantity = quantity;
-        this.sourceId = sourceId;
-        this.sourceType = sourceType;
-        this.supplyDate = supplyDate;
-        this.requestDate = requestDate;
+
+    public String getManagerEmail() {
+        return managerEmail;
+    }
+
+    public void setManagerEmail(String managerEmail) {
+        this.managerEmail = managerEmail;
     }
     
-
+    
     public String getSourceType() {
         return sourceType;
     }

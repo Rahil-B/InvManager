@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import MyHibernate.HibernateUtil;
 import java.time.LocalDate;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -120,13 +121,14 @@ public class CMNewSupply extends HttpServlet {
         int qty=Integer.parseInt(request.getParameter("qty"));
         String farmType=request.getParameter("farm_type");
         int farmId=Integer.parseInt(request.getParameter("farm_id"));
-        int desId=-1;
-        
+        int desId=0;
+        HttpSession htSess = request.getSession();
+        String managerEmail=(String)htSess.getAttribute("user_email");
         Date supplyDate=HibernateUtil.convertDateToSqlDate(request.getParameter("supply_date"));
         Date requestDate=Date.valueOf(LocalDate.now());
         
         
-        Supplies sp=new Supplies(fId,qty,farmId,farmType,desId,supplyDate,requestDate);
+        Supplies sp=new Supplies(fId,qty,farmId,farmType,desId,supplyDate,requestDate,managerEmail);
         
         Session sess;
         Transaction tx=null;

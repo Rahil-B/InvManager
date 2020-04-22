@@ -4,12 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CMNewSupply.java</file>
-            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/MyHibernate/HibernateUtil.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/CollectionManagerHome.jsp</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CollectionManagerHome.java</file>
             <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/ManageUsers/LoginFilter.java</file>
-            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/Models/DatabasePopulater.java</file>
-            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/Models/Supplies.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/WEB-INF/web.xml</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/Receipt.jsp</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/CollectionManagerSupplies.jsp</file>
             <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/CollectionManagerNewSupply.jsp</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CMHistory.java</file>
             <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CMSupplies.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/CollectionManagerHistory.jsp</file>
         </group>
     </open-files>
 </project-private>

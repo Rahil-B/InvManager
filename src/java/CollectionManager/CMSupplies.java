@@ -10,6 +10,9 @@ import Models.Supplies;
 import MyHibernate.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,9 +20,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -44,13 +49,23 @@ public class CMSupplies extends HttpServlet {
         Session sess;
         Transaction tx=null;
         String redirection_string=null;
-        
+        HttpSession htSess=request.getSession();
+        String managerEmail=(String)htSess.getAttribute("user_email");
         try{
             sess=HibernateUtil.getSessionFactory().openSession();
             tx=sess.beginTransaction();
-            List<Supplies> supplies_list = sess.createCriteria(Supplies.class).list();
+            List<Supplies> supplies_list =(List<Supplies>) sess.createCriteria(Supplies.class).add(Restrictions.eq("managerEmail", managerEmail)).add(Restrictions.ge("supplyDate", Date.valueOf(LocalDate.now() ) ) ).list();
+            List<Fruits> fruit_list=(List<Fruits>) sess.createCriteria(Fruits.class).list();
+            
             request.setAttribute("supplies_list", supplies_list);
             tx.commit();
+            
+            HashMap<Integer,String> fruit_names=new HashMap<>();
+//functional operation            
+            fruit_list.stream().forEach((f) -> {
+                fruit_names.put(f.getFruitId(),f.getFruitName());
+            });
+            request.setAttribute("fruit_names", fruit_names);
             redirection_string=null;//"/InvManager/";
         }
         catch(HibernateException e)
@@ -77,8 +92,13 @@ public class CMSupplies extends HttpServlet {
                 //sess.close();
         }
         
+        
+        
         if(redirection_string!=null)
             response.sendRedirect(redirection_string);
+        
+        
+        
         
         RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerSupplies.jsp");
         red.include(request, response);
