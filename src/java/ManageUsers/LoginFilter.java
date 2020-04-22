@@ -95,7 +95,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse res=(HttpServletResponse) response;
         Throwable problem = null;
             
-        if(req.getRequestURI().endsWith("index.html")||req.getRequestURI().endsWith("InvManager/")||req.getRequestURI().endsWith("LogIn.jsp")||req.getRequestURI().endsWith("/UserRegistrationServlet")||req.getRequestURI().endsWith("UserRegistration.jsp")){
+        if(req.getRequestURI().endsWith("/DatabasePopulater")||req.getRequestURI().endsWith("index.html")||req.getRequestURI().endsWith("InvManager/")||req.getRequestURI().endsWith("LogIn.jsp")||req.getRequestURI().endsWith("/UserRegistrationServlet")||req.getRequestURI().endsWith("UserRegistration.jsp")){
             try {
                 log("\t\t stage1########");
                 chain.doFilter(request, response);
@@ -112,7 +112,7 @@ public class LoginFilter implements Filter {
 
             //doBeforeProcessing(request, response);
             HttpSession session=req.getSession(false);
-            if(session!=null&&session.getAttribute("user_email")!=null){
+            if(session!=null&session.getAttribute("user_email")!=null){
                 try {
                     chain.doFilter(request, response);
                 } catch (Throwable t) {

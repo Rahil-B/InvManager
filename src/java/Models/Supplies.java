@@ -7,8 +7,13 @@ package Models;
 
 import java.io.Serializable;
 import java.sql.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 
 /**
@@ -18,27 +23,68 @@ import javax.persistence.Id;
 @Entity
 public class Supplies implements Serializable {
     @Id
-    private String supplyId;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int supplyId;
+    
+    private int fruitId;
     
     private int quantity;
-    private String sourceId;
-    private String desId;
+    
+    private int sourceId;
+    
+    private String sourceType;
+    
+    private int desId;
+    
     private Date supplyDate;
+    
     private Date requestDate;
 
+        
     public Supplies() {
     }
 
-    public Supplies(String supplyId, int quantity, String sourceId, String desId, Date supplyDate, Date requestDate) {
-        this.supplyId = supplyId;
+    public Supplies(int fruitId, int quantity, int sourceId,String sourceType,int desId, Date supplyDate, Date requestDate) {
+        this.fruitId=fruitId;
         this.quantity = quantity;
+        
         this.sourceId = sourceId;
+        this.sourceType=sourceType;
         this.desId = desId;
         this.supplyDate = supplyDate;
         this.requestDate = requestDate;
     }
 
-    public String getSupplyId() {
+    public Supplies( int fruitId, int quantity, int sourceId, String sourceType, Date supplyDate, Date requestDate) {
+        
+        this.fruitId = fruitId;
+        this.quantity = quantity;
+        this.sourceId = sourceId;
+        this.sourceType = sourceType;
+        this.supplyDate = supplyDate;
+        this.requestDate = requestDate;
+    }
+    
+
+    public String getSourceType() {
+        return sourceType;
+    }
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+    
+    public void setFruitId(int fruitId) {
+        this.fruitId = fruitId;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="fruitId")
+    public int getFruitId() {
+        return fruitId;
+    }
+
+    public int getSupplyId() {
         return supplyId;
     }
 
@@ -46,11 +92,11 @@ public class Supplies implements Serializable {
         return quantity;
     }
 
-    public String getSourceId() {
+    public int getSourceId() {
         return sourceId;
     }
 
-    public String getDesId() {
+    public int getDesId() {
         return desId;
     }
 
@@ -62,7 +108,7 @@ public class Supplies implements Serializable {
         return requestDate;
     }
 
-    public void setSupplyId(String supplyId) {
+    public void setSupplyId(int supplyId) {
         this.supplyId = supplyId;
     }
 
@@ -70,11 +116,11 @@ public class Supplies implements Serializable {
         this.quantity = quantity;
     }
 
-    public void setSourceId(String sourceId) {
+    public void setSourceId(int sourceId) {
         this.sourceId = sourceId;
     }
 
-    public void setDesId(String desId) {
+    public void setDesId(int desId) {
         this.desId = desId;
     }
 

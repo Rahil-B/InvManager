@@ -5,14 +5,20 @@
  */
 package CollectionManager;
 
+import Models.Fruits;
+import MyHibernate.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -35,6 +41,9 @@ public class CollectionManagerHome extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerHome.jsp");
+        
+        
+        
         
         red.include(request, response);
     }

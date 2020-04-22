@@ -4,6 +4,8 @@
     Author     : RAHIL
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="Models.Fruits"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +20,7 @@
 		         <td colspan="5" rowspan="10">
 		         
              		Generate new supply request
-             		<form action = "AddSupply" method="POST">
+             		<form action = "" method="POST">
                     <table border = "1" width="100%">
             			<tr>	
             						<th colspan='3'>New Supply</th>
@@ -26,25 +28,32 @@
             			<tr>
             					<td colspan='1'>Fruit:</td>
             					<td>
-		        					<select name="fruit_type">
+		        					<select name="fruit_id">
 		        						<!--value=fruit id-->
-				                        <option value="1" > Apple </option>
-				                        <option value="2" > Mangoe </option>
-				                        <option value="3" > Kiwi </option>
-				                        <option value="4" > Orange </option>
-				                        <option value="5" > Grapes </option>
+				                        
+                                                        <%
+                                                            List<Fruits> fl=(List<Fruits>)request.getAttribute("fruit_list");
+                                                            for(Fruits f :fl){
+                                                            
+                                                        %>
+                                                        <option value="<%=f.getFruitId()%>"><%=f.getFruitName()%></option>
+                                                        <%
+                                                            }
+                                                        %>
+				                        
 		                        	</select>
             					</td>
             			</tr>
             			<tr>
             					<td colspan='1'>Quantity:</td>
             					<td>
-		        					<select name="qty">
-				                        <option value="1" > 01 </option>
-				                        <option value="2" > 02 </option>
-				                        <option value="3" > 03 </option>
-				                        <option value="4" > 04 </option>
-				                        <option value="5" > 05 </option>
+                                                    <select name="qty" >
+                                                        <option value="0" > 0 </option>
+                                                        <%
+                                                            for(int i=1;i<20;i++){
+                                                        %>
+                                                        <option value="<%=i%>" > <%=i%> </option>
+                                                        <% } %>
 		                        	</select>
                             	</td>
             			</tr>
@@ -52,11 +61,11 @@
             				<td colspan='1'>Source</td>
             				<td>
 		        					<select name="farm_type">
-				                        <option value="1" > F </option>
-				                        <option value="2" > 02 </option>
-				                        <option value="3" > 03 </option>
-				                        <option value="4" > 04 </option>
-				                        <option value="5" > 05 </option>
+				                        <option value="1" > F1 </option>
+				                        <option value="2" > F2 </option>
+				                        <option value="3" > F3 </option>
+				                        <option value="4" > F4 </option>
+				                        
 		                        	</select>
             						<input type='text' name='farm_id' required >
             				</td> 

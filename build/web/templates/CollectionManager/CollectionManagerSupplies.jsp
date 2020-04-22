@@ -1,9 +1,6 @@
-<%-- 
-    Document   : CollectionManagerSupplies
-    Created on : 20 Apr, 2020, 8:13:09 PM
-    Author     : RAHIL
---%>
 
+<%@page import="java.util.List"%>
+<%@page import="Models.Supplies"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,15 +21,42 @@
              				<th>Quantity(Kg.)</th>
              				<th>Source</th>
              				<th>Request Date</th>
+                                        <th>Supply Date</th>
              				<th>Action</th>
              			</tr>
              			<tr>
              				<td>S2001230001</td>
-             				<td>Pending</td>
+             				<td>Pending Static</td>
              				<td>Apple</td>
              				<td>30</td>
              				<td>F0100100001</td>
              				<td>23/01/2020</td>
+                                        <td>30/01/2020</td>
+             				<td><input type="button" name="gen_rec" value="Generate receipt"/></td>
+             			</tr>
+                                <%
+                                    List<Supplies> supplies_list=(List<Supplies>) request.getAttribute("supplies_list");
+                                    for(Supplies s:supplies_list){
+                                %>
+                                <tr>
+                                    <td><%=s.getSupplyId()%></td>
+                                    <td><%
+                                        if(s.getDesId()<0){
+                                        %>
+                                        <%="Accepted"%>
+                                        <%}%>
+                                        <%else if(s.getDesId()==0){%>
+                                        <%="Declined"%>
+                                        <%}%>
+                                        <%else{%>
+                                        <%="Pending"%>
+                                        <%}%>
+                                    </td>
+                                    <td><%=s.getFruitId()%></td>
+             				<td><%=s.getQuantity()%></td>
+                                        <td><%=s.getSourceType()+s.getSourceId()%></td>
+                                        <td><%=s.getRequestDate()%></td>
+                                        <td><%=s.getSupplyDate()%></td>
              				<td><input type="button" name="gen_rec" value="Generate receipt"/></td>
              			</tr>
              		</table>

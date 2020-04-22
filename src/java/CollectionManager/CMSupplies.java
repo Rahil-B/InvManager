@@ -5,14 +5,21 @@
  */
 package CollectionManager;
 
+import Models.Fruits;
+import Models.Supplies;
+import MyHibernate.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -33,8 +40,47 @@ public class CMSupplies extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerSupplies.jsp");
         
+        Session sess;
+        Transaction tx=null;
+        String redirection_string=null;
+        
+        try{
+            sess=HibernateUtil.getSessionFactory().openSession();
+            tx=sess.beginTransaction();
+            List<Supplies> supplies_list = sess.createCriteria(Supplies.class).list();
+            request.setAttribute("supplies_list", supplies_list);
+            tx.commit();
+            redirection_string=null;//"/InvManager/";
+        }
+        catch(HibernateException e)
+        {
+            if (tx != null)
+            {
+                tx.rollback();
+            }
+            System.out.println("Error : " + e);
+            redirection_string="/InvManager/ErrorPage.jsp?msg=hibernete transaction error"+"\nerror: "+e;
+        }
+        catch(NullPointerException npe){
+            redirection_string="/InvManager/ErrorPage.jsp?msg=transaction error"+"\nerror: "+npe;
+        }
+        catch(ExceptionInInitializerError ex){
+            redirection_string="/InvManager/ErrorPage.jsp?msg=server_is_down";
+        }
+        catch(Exception e){
+            redirection_string="/InvManager/ErrorPage.jsp?msg=server_is_down"+"error: "+e;
+        }
+        finally
+        {
+            //if(sess!=null)
+                //sess.close();
+        }
+        
+        if(redirection_string!=null)
+            response.sendRedirect(redirection_string);
+        
+        RequestDispatcher red=request.getRequestDispatcher("/templates/CollectionManager/CollectionManagerSupplies.jsp");
         red.include(request, response);
     }
 

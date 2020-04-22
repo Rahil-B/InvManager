@@ -7,6 +7,7 @@ package MyHibernate;
 
 import Models.UserData;
 import Models.Supplies;
+import Models.Fruits;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,12 +20,12 @@ import org.hibernate.service.ServiceRegistry;
  *
  * @author RAHIL
  */
-public class HiberneteUtil {
+public class HibernateUtil {
     private static final SessionFactory sessFact;
     private static final ServiceRegistry serviceReg;
     static {
         try{
-            Configuration config=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(UserData.class).addAnnotatedClass(Supplies.class);
+            Configuration config=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(UserData.class).addAnnotatedClass(Supplies.class).addAnnotatedClass(Fruits.class);
             
             serviceReg=new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
             

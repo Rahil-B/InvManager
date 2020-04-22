@@ -3,15 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ManageUsers;
+package Models;
 
-import Models.UserData;
 import MyHibernate.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,12 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 /**
  *
  * @author RAHIL
  */
-@WebServlet(name = "UserRegistrationServlet", urlPatterns = {"/UserRegistrationServlet"})
-public class UserRegistrationServlet extends HttpServlet {
+@WebServlet(name = "DatabasePopulater", urlPatterns = {"/DatabasePopulater"})
+public class DatabasePopulater extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,52 +34,27 @@ public class UserRegistrationServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException  {
-        response.setContentType("text/html;charset=UTF-8");
-        String fnm=request.getParameter("first_name");
-        String lnm=request.getParameter("last_name");
-        String p_no=request.getParameter("ph_no");
-        String email=request.getParameter("email");
-        String passWd=request.getParameter("password");
-        String rePassWd=request.getParameter("repassword");
-        String gender=request.getParameter("gender");
-        String idNum=request.getParameter("id_num");
-        Date dob;
-        dob=HibernateUtil.convertDateToSqlDate(request.getParameter("dob"));
-        /*
-        try{
-            dob=new Date(
-                    new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dob")).getTime()
-            );
-        }
-        catch(ParseException pe){
-            System.out.println("date conversion error");
-        }
-        catch(NullPointerException e){
-            
-        }
-        */
-        String u_type=request.getParameter("u_type");
+            throws ServletException, IOException {
         
-        String address=request.getParameter("address");
-        
-        UserData ud=new UserData(fnm,lnm,p_no,email,passWd,gender.charAt(0),dob,u_type.charAt(0),address,idNum);
-        
-//        Configuration con=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(UserData.class);
-//         ServiceRegistry s_reg=new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
-//        
-//         
-//         Session sess=con.buildSessionFactory(s_reg).openSession();
         
         Session sess;
         Transaction tx=null;
         String redirection_string=null;
+        
         try{
             sess=HibernateUtil.getSessionFactory().openSession();
             tx=sess.beginTransaction();
-            sess.save(ud);
+            //Fruits f=new Fruits("Mangoe","Yellow",15);
+            //sess.save(f);
+            Fruits f2=new Fruits("Apple","Red",25);
+            Fruits f3=new Fruits("Kiwi","green",5);
+            Fruits f4=new Fruits("Banana","Yellow",5);
+            sess.save(f2);
+            sess.save(f3);
+            sess.save(f4);
+            
             tx.commit();
-            redirection_string="/InvManager/";
+            redirection_string=null;//"/InvManager/";
         }
         catch(HibernateException e)
         {
@@ -107,20 +79,25 @@ public class UserRegistrationServlet extends HttpServlet {
             //if(sess!=null)
                 //sess.close();
         }
+        
+        
+        
+        
+        
+        
+        response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /*TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UserRegistrationServlet</title>");            
+            out.println("<title>Servlet DatabasePopulater</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UserRegistrationServlet at " + request.getContextPath() +" " +redirection_string +"</h1>");
+            out.println("<h1>Servlet DatabasePopulater at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
-        
-        response.sendRedirect(redirection_string);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

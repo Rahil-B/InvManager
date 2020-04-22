@@ -6,7 +6,7 @@
 package Validators;
 
 import Models.UserData;
-import MyHibernate.HiberneteUtil;
+import MyHibernate.HibernateUtil;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -44,7 +44,7 @@ public class PasswordValidator {
             Transaction tx=null;
             String redirection_string=null;
             try{
-                sess=HiberneteUtil.getSessionFactory().openSession();
+                sess=HibernateUtil.getSessionFactory().openSession();
                 
                 ud=(UserData)sess.get(UserData.class,user_email);
             }
