@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CMNewSupply.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CollectionManagerHome.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/ManageUsers/LoginFilter.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/WEB-INF/web.xml</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/Models/Supplies.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/CollectionManagerSupplies.jsp</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/web/templates/CollectionManager/CollectionManagerNewSupply.jsp</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/Buyer/BuyerHome.java</file>
+            <file>file:/G:/desktop_files_repo/prog/013_sem4/SE/013_014_seLab6/InvManager/src/java/CollectionManager/CMSupplies.java</file>
+        </group>
     </open-files>
 </project-private>
