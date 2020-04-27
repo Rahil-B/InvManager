@@ -44,14 +44,37 @@ public class DatabasePopulater extends HttpServlet {
         try{
             sess=HibernateUtil.getSessionFactory().openSession();
             tx=sess.beginTransaction();
-            //Fruits f=new Fruits("Mangoe","Yellow",15);
-            //sess.save(f);
+            Fruits f=new Fruits("Mangoe","Yellow",15);
+            sess.save(f);
+            
             Fruits f2=new Fruits("Apple","Red",25);
             Fruits f3=new Fruits("Kiwi","green",5);
             Fruits f4=new Fruits("Banana","Yellow",5);
             sess.save(f2);
             sess.save(f3);
             sess.save(f4);
+            
+            
+            
+            WareHouse w1=new WareHouse(100000,"Address warehouse1");
+            WareHouse w2=new WareHouse(50000,"Address warehouse2");
+            WareHouse w3=new WareHouse(200000,"Address warehouse3");
+            WareHouse w4=new WareHouse(300000,"Address warehouse4");
+            
+            sess.save(w1);
+            sess.save(w2);
+            sess.save(w3);
+            sess.save(w4);
+            
+            
+            Inventory invs[]={new Inventory(1,-1,0,1),new Inventory(1,-1,0,2),new Inventory(1,-1,0,3),new Inventory(1,-1,0,4),
+                new Inventory(2,-1,0,1),new Inventory(2,-1,0,2),new Inventory(2,-1,0,3),new Inventory(2,-1,0,4),
+                new Inventory(3,-1,0,1),new Inventory(3,-1,0,2),new Inventory(3,-1,0,3),new Inventory(3,-1,0,4),
+                new Inventory(4,-1,0,1),new Inventory(4,-1,0,2),new Inventory(4,-1,0,3),new Inventory(4,-1,0,4),
+            };
+            for(int i=14;i<16;i++){
+                sess.save(invs[i]);
+            }
             
             tx.commit();
             redirection_string=null;//"/InvManager/";
@@ -94,7 +117,7 @@ public class DatabasePopulater extends HttpServlet {
             out.println("<title>Servlet DatabasePopulater</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DatabasePopulater at " + request.getContextPath() + "</h1>");
+            out.println("<h1>The project is ready to use <a href='/InvManager/'>Login</a></h1>");
             out.println("</body>");
             out.println("</html>");
         }

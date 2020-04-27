@@ -8,6 +8,8 @@ package MyHibernate;
 import Models.UserData;
 import Models.Supplies;
 import Models.Fruits;
+import Models.Inventory;
+import Models.WareHouse;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,7 +27,7 @@ public class HibernateUtil {
     private static final ServiceRegistry serviceReg;
     static {
         try{
-            Configuration config=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(UserData.class).addAnnotatedClass(Supplies.class).addAnnotatedClass(Fruits.class);
+            Configuration config=new Configuration().configure("/MyHibernate/hibernate.cfg.xml").addAnnotatedClass(WareHouse.class).addAnnotatedClass(Inventory.class).addAnnotatedClass(UserData.class).addAnnotatedClass(Supplies.class).addAnnotatedClass(Fruits.class);
             
             serviceReg=new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
             

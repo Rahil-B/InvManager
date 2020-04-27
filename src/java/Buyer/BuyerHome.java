@@ -7,12 +7,15 @@ package Buyer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -65,6 +68,23 @@ public class BuyerHome extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(true);
+        List<Cart> cart1;
+        cart1 = (List<Cart>)session.getAttribute("cart");
+        if (cart1 == null) {  // cart exists?
+            cart1=new ArrayList<Cart>();
+        }
+        
+            String qty=request.getParameter("o_qty");
+            String price=request.getParameter("price");
+            String fnm=request.getParameter("fruit");
+            Cart c=new Cart(qty,price,fnm);
+            cart1.add(c);
+            //HttpSession session = request.getSession(true);
+// Place the shopping cart inside the session
+        synchronized (session) {  // synchronized to prevent concurrent updates
+           session.setAttribute("cart", cart1);
+        }
         processRequest(request, response);
     }
 

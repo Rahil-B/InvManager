@@ -4,13 +4,13 @@
     Author     : RAHIL
 --%>
 
-<%@page import="Validators.PasswordValidator"%>
+<%@page import="Validators.PasswordValidator" errorPage="/InvManager/ErrorPage.jsp?msg=error in login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" import="javax.servlet.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login</title>
     </head>
     <body>
         <%="Connected " +request.getParameter("user_email") %>
@@ -30,9 +30,11 @@
                             break;
                         case("c"):
                             response.sendRedirect("/InvManager/CollectionManager/CollectionManagerHome");
+                            
                             break;
                         case("s"):
                             response.sendRedirect("/InvManager/StorageAdmin/AdminHome");
+                            session.setAttribute("warId", 1);//can be increased using tupple of admin
                             break;
                         case("t"):
                             response.sendRedirect("/InvManager/Transport/TransportHome");

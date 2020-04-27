@@ -112,7 +112,7 @@ public class LoginFilter implements Filter {
 
             //doBeforeProcessing(request, response);
             HttpSession session=req.getSession(false);
-            if(session!=null&session.getAttribute("user_email")!=null){
+            if(session!=null&&session.getAttribute("user_email")!=null){
                 try {
                     chain.doFilter(request, response);
                 } catch (Throwable t) {

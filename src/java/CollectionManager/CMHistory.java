@@ -53,7 +53,7 @@ public class CMHistory extends HttpServlet {
         try{
             sess=HibernateUtil.getSessionFactory().openSession();
             tx=sess.beginTransaction();
-            List<Supplies> supplies_list =(List<Supplies>) sess.createCriteria(Supplies.class).add(Restrictions.eq("managerEmail", managerEmail)).add(Restrictions.lt("supplyDate", Date.valueOf(LocalDate.now() ) ) ).list();
+            List<Supplies> supplies_list =(List<Supplies>) sess.createCriteria(Supplies.class).add(Restrictions.eq("managerEmail", managerEmail)).list();
             List<Fruits> fruit_list=(List<Fruits>) sess.createCriteria(Fruits.class).list();
             request.setAttribute("supplies_list", supplies_list);
             tx.commit();

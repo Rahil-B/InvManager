@@ -22,6 +22,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Supplies implements Serializable {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int supplyId;
@@ -78,12 +79,12 @@ public class Supplies implements Serializable {
         this.fruitId = fruitId;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="fruitId")
+    
     public int getFruitId() {
         return fruitId;
     }
 
+    @Id
     public int getSupplyId() {
         return supplyId;
     }
