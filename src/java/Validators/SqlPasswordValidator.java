@@ -28,7 +28,7 @@ public class SqlPasswordValidator {
         try{
             
                 Class.forName("com.mysql.jdbc.Driver");
-                //Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@192.168.29.152:1521:XE","ce4_13","ce4_13");
+                
                 Connection conn=DriverManager.getConnection(this.server_url,this.db_usernm,this.db_passwd);
                 Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
                 System.out.println("select * from Users where user_email=\""+user_email+"\";"+user_passwd);
